@@ -20,7 +20,7 @@ class UspsProxy
         request = USPS::Request::CityAndStateLookup.new(zip)
         response = request.send!
         
-        response.get("20008").to_h.to_json
+        response.get(zip).to_h.to_json
       else
         {
           error: 1, 
