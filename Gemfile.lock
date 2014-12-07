@@ -1,3 +1,12 @@
+PATH
+  remote: .
+  specs:
+    usps-proxy (0.0.1)
+      dotenv
+      sinatra
+      thin
+      usps
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -20,6 +29,7 @@ GEM
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
+    rake (10.1.0)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -41,8 +51,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  dotenv
+  bundler (~> 1.7)
   pry
-  sinatra
-  thin
-  usps
+  rake (~> 10.0)
+  usps-proxy!
