@@ -44,6 +44,8 @@ scope '/usps' do
 end
 ```
 
+Each API is its own mini `Sinatra` application with a single route, `'/'`.
+
 ### Standalone
 
 TBD
