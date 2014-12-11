@@ -41,8 +41,8 @@ In `config/routes.rb`:
 
 ```ruby
 scope '/usps' do
-  match '/city_state', USPS::Proxy::CityState
-  match '/address_standardization', USPS::Proxy::AddressStandardization
+  match '/city_state' => USPS::Proxy::CityState
+  match '/address_standardization' => USPS::Proxy::AddressStandardization
 end
 ```
 
