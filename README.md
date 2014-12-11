@@ -2,6 +2,8 @@
 
 A Sinatra server that makes the USPS API a tad easier to consume on the client-side.
 
+This gem sits alongside the namespace created by the [`USPS` gem](https://github.com/gaffneyc/usps).
+
 ## Why?
 
 - The USPS API is XML-based. This makes is JSON-accessible.
@@ -13,7 +15,7 @@ A Sinatra server that makes the USPS API a tad easier to consume on the client-s
 This is still a work-in-progress, but there is basic support for:
 
 - city/state lookup
-- address verification/standardization
+- address standardization/verification
 
 ## Usage
 
@@ -28,10 +30,10 @@ gem 'usps-proxy', github: '18F/usps-proxy', branch: 'master'
 By default, `USPS::Proxy` will look for the `USPS_USER` environment variable. However, you can override this in `config/initializers/[production|development|test].rb`:
 
 ```ruby
-USPS::Proxy.config do |c|
-  c.usps_user = Rails.application.secrets.usps_user
-end
+USPS.username = 'your usps username'
 ```
+
+(note that this is a method on the [`USPS` gem](https://github.com/gaffneyc/usps) and not this gem)
 
 USPS offers several APIs. You likely won't need to use all of them. Because of that, `USPS::Proxy` allows you to mix and match them:
 
@@ -40,7 +42,7 @@ In `config/routes.rb`:
 ```ruby
 scope '/usps' do
   match '/city_state', USPS::Proxy::CityState
-  match '/address_verification', USPS::Proxy::AddressVerification
+  match '/address_standardization', USPS::Proxy::AddressStandardization
 end
 ```
 
@@ -48,7 +50,23 @@ Each API is its own mini `Sinatra` application with a single route, `'/'`.
 
 ### Standalone
 
-TBD
+Clone this repo and `cd` into it.
+
+Edit `config.ru` as needed. Also be sure your `USPS_USER` environment variable is set (or user the `USPS.username` *somewhere* before the app runs).
+
+```ruby
+require './lib/usps-proxy'
+
+run Rack::URLMap.new(
+  '/city_state' => USPS::Proxy::CityState,
+  '/address_standardization' => USPS::Proxy::AddressStandardization
+)
+```
+
+```
+$ bundle
+$ bundle exec thin start
+```
 
 ### APIs
 
@@ -62,9 +80,9 @@ Request params (in the query string):
 
 Example path: `/city_state?zip5=20006`
 
-#### Address Verification/standardization
+#### Address Standardization/Verification
 
-GET `/address_verification`
+GET `/address_standardization`
 
 Request params (in the query string):
 
@@ -76,7 +94,7 @@ Request params (in the query string):
 - `zip5` *required*
 - `zip4`
 
-Example path: `/address_verification?address1=1800F%20street%20NW&city=washington&state=DC&zip5=20006`
+Example path: `/address_standardization?address1=1800F%20street%20NW&city=washington&state=DC&zip5=20006`
 
 ## Public domain
 
