@@ -51,7 +51,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.7)
   pry
   rake (~> 10.0)
   usps-proxy!

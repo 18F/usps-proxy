@@ -1,3 +1,6 @@
-require './usps_proxy'
+require './lib/usps-proxy'
 
-run UspsProxy::App
+run Rack::URLMap.new(
+  '/city_state' => USPS::Proxy::CityState,
+  '/address_standardization' => USPS::Proxy::AddressStandardization
+)
