@@ -4,7 +4,7 @@ A Sinatra server that makes the USPS API a tad easier to consume on the client-s
 
 ## Why?
 
-- The USPS API is XML-based. This makes is JSON-accessible.
+- The USPS API is XML-based. This gem makes it JSON-accessible.
 - Keep API keys completely secret
 - Monitor and throttle client-side requests to USPS's servers (tbd)
 
