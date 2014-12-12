@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/adelevie/usps.git
+  revision: 299dff20d0597c46da4432550637276c91d09fea
+  branch: city_state_response
+  specs:
+    usps (0.1.2)
+      builder (>= 2.1.2)
+      nokogiri (>= 1.4.1)
+      typhoeus (>= 0.1.18)
+
 PATH
   remote: .
   specs:
@@ -5,7 +15,6 @@ PATH
       dotenv
       sinatra
       thin
-      usps
 
 GEM
   remote: https://rubygems.org/
@@ -42,10 +51,6 @@ GEM
     tilt (1.4.1)
     typhoeus (0.6.9)
       ethon (>= 0.7.1)
-    usps (0.1.2)
-      builder (>= 2.1.2)
-      nokogiri (>= 1.4.1)
-      typhoeus (>= 0.1.18)
 
 PLATFORMS
   ruby
@@ -53,4 +58,5 @@ PLATFORMS
 DEPENDENCIES
   pry
   rake (~> 10.0)
+  usps!
   usps-proxy!
