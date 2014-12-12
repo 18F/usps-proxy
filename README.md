@@ -80,6 +80,20 @@ Request params (in the query string):
 
 Example path: `/city_state?zip5=20006`
 
+Example response:
+
+```javascript
+{
+    "results": {
+        "20008": {
+            "zip": 20008,
+            "city": "WASHINGTON",
+            "state": "DC"
+        }
+    }
+}
+```
+
 #### Address Standardization/Verification
 
 GET `/address_standardization`
@@ -94,7 +108,45 @@ Request params (in the query string):
 - `zip5` *required*
 - `zip4`
 
-Example path: `/address_standardization?address1=1800F%20street%20NW&city=washington&state=DC&zip5=20006`
+Example path: `/address_standardization?address1=1800%20F%20street%20NW&city=washington&state=DC&zip5=20006`
+
+Example response:
+
+```javascript
+{
+    "results": [
+        {
+            "name": null,
+            "company": "",
+            "address1": "1901 F ST NW",
+            "address2": "",
+            "city": "WASHINGTON",
+            "state": "DC",
+            "zip5": "20006",
+            "zip4": "",
+            "return_text": ""
+        }
+    ]
+}
+```
+
+```javascript
+{
+    "results": [
+        {
+            "name": null,
+            "company": "",
+            "address1": "1801 F ST NW",
+            "address2": "",
+            "city": "WASHINGTON",
+            "state": "DC",
+            "zip5": "20006",
+            "zip4": "4406",
+            "return_text": "Default address: The address you entered was found but more information is needed (such as an apartment, suite, or box number) to match to a specific address."
+        }
+    ]
+}
+```
 
 ## Public domain
 
