@@ -13,7 +13,9 @@ module USPS
         
         begin
           response = request.send!
-          response.to_h.values.to_json
+          {
+            results: response.to_h.values
+          }.to_json
         rescue USPS::Error => error
           {
             error: error.message,
