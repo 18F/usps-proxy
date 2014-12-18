@@ -11,6 +11,8 @@ VCR.configure do |c|
 end
 
 require 'usps-proxy'
+
+USPS.testing = true
  
 def app
   Rack::URLMap.new(

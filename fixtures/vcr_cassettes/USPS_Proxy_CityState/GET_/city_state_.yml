@@ -132,4 +132,136 @@ http_interactions:
         <CityStateLookupResponse><ZipCode ID="0"><Error><Number>-2147219024</Number><Source>WebtoolsAMS;CityStateLookup</Source><Description>ZIPCode must be 5 characters</Description><HelpFile/><HelpContext/></Error></ZipCode></CityStateLookupResponse>
     http_version: 
   recorded_at: Wed, 17 Dec 2014 21:22:08 GMT
+- request:
+    method: get
+    uri: http://testing.shippingapis.com/ShippingAPITest.dll?API=CityStateLookup&XML=%3CCityStateLookupRequest%20USERID=%22<USPS_USER_ID
+      (hidden)>%22%3E%3CZipCode%20ID=%220%22%3E%3CZip5%3E20006%3C/Zip5%3E%3C/ZipCode%3E%3C/CityStateLookupRequest%3E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Backside-Transport:
+      - OK OK
+      Cache-Control:
+      - private
+      Content-Type:
+      - text/xml
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 2.0.50727
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 18 Dec 2014 17:17:55 GMT
+      X-Client-Ip:
+      - 56.0.33.9
+      Access-Control-Allow-Origin:
+      - "*"
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '174'
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <CityStateLookupResponse><ZipCode ID="0"><Zip5>20006</Zip5><City>WASHINGTON</City><State>DC</State></ZipCode></CityStateLookupResponse>
+    http_version: 
+  recorded_at: Thu, 18 Dec 2014 17:17:54 GMT
+- request:
+    method: get
+    uri: http://testing.shippingapis.com/ShippingAPITest.dll?API=CityStateLookup&XML=%3CCityStateLookupRequest%20USERID=%22<USPS_USER_ID
+      (hidden)>%22%3E%3CZipCode%20ID=%220%22%3E%3CZip5/%3E%3C/ZipCode%3E%3C/CityStateLookupRequest%3E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Backside-Transport:
+      - OK OK
+      Cache-Control:
+      - private
+      Content-Type:
+      - text/xml
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 2.0.50727
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 18 Dec 2014 17:17:52 GMT
+      X-Client-Ip:
+      - 56.0.33.9
+      Access-Control-Allow-Origin:
+      - "*"
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '272'
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <CityStateLookupResponse><ZipCode ID="0"><Error><Number>-2147219399</Number><Source>WebtoolsAMS;CityStateLookup</Source><Description>Invalid Zip Code.</Description><HelpFile/><HelpContext/></Error></ZipCode></CityStateLookupResponse>
+    http_version: 
+  recorded_at: Thu, 18 Dec 2014 17:17:54 GMT
+- request:
+    method: get
+    uri: http://testing.shippingapis.com/ShippingAPITest.dll?API=CityStateLookup&XML=%3CCityStateLookupRequest%20USERID=%22<USPS_USER_ID
+      (hidden)>%22%3E%3CZipCode%20ID=%220%22%3E%3CZip5%3EthisIsNotAZip5%3C/Zip5%3E%3C/ZipCode%3E%3C/CityStateLookupRequest%3E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Backside-Transport:
+      - OK OK
+      Cache-Control:
+      - private
+      Content-Type:
+      - text/xml
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 2.0.50727
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 18 Dec 2014 17:17:52 GMT
+      X-Client-Ip:
+      - 56.0.33.9
+      Access-Control-Allow-Origin:
+      - "*"
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '283'
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <CityStateLookupResponse><ZipCode ID="0"><Error><Number>-2147219024</Number><Source>WebtoolsAMS;CityStateLookup</Source><Description>ZIPCode must be 5 characters</Description><HelpFile/><HelpContext/></Error></ZipCode></CityStateLookupResponse>
+    http_version: 
+  recorded_at: Thu, 18 Dec 2014 17:17:54 GMT
 recorded_with: VCR 2.9.3
