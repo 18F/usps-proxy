@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    usps-proxy (0.0.1)
+    usps-proxy (0.0.2)
       dotenv
       sinatra
       thin
