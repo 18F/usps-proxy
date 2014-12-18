@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Alan deLevie"]
   spec.email         = ["alan.delevie@gsa.gov"]
   spec.summary       = %q{Some space between the USPS API and your users}
-  spec.description   = %q{Makes the USPS API a bit easier to consumer on the client-side.}
+  spec.description   = %q{Makes the USPS API a bit easier to consume on the client-side.}
   spec.homepage      = ""
   spec.license       = "Public Domain. See LICENSE.md"
 
@@ -20,6 +20,10 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "pry"
+  spec.add_development_dependency "rack-test"
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "webmock"
+  spec.add_development_dependency "vcr"
   
   spec.add_dependency "dotenv"
   spec.add_dependency "sinatra"

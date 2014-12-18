@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://production.shippingapis.com/ShippingAPI.dll?API=Verify&XML=%3CAddressValidateRequest%20USERID=%22<USPS_USER_ID
+      (hidden)>%22%3E%3CAddress%20ID=%220%22%3E%3CFirmName/%3E%3CAddress1/%3E%3CAddress2%3E1800%20F%20street%20NW%3C/Address2%3E%3CCity%3Ewashington%3C/City%3E%3CState%3EDC%3C/State%3E%3CZip5%3E20006%3C/Zip5%3E%3CZip4/%3E%3C/Address%3E%3C/AddressValidateRequest%3E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Backside-Transport:
+      - OK OK
+      Cache-Control:
+      - private
+      Content-Type:
+      - text/xml
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 2.0.50727
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 17 Dec 2014 21:22:07 GMT
+      X-Client-Ip:
+      - 56.0.70.6
+      Access-Control-Allow-Origin:
+      - "*"
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '224'
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <AddressValidateResponse><Address ID="0"><Address2>1800 F ST NW</Address2><City>WASHINGTON</City><State>DC</State><Zip5>20405</Zip5><Zip4>0001</Zip4></Address></AddressValidateResponse>
+    http_version: 
+  recorded_at: Wed, 17 Dec 2014 21:22:07 GMT
+- request:
+    method: get
+    uri: http://production.shippingapis.com/ShippingAPI.dll?API=Verify&XML=%3CAddressValidateRequest%20USERID=%22<USPS_USER_ID
+      (hidden)>%22%3E%3CAddress%20ID=%220%22%3E%3CFirmName/%3E%3CAddress1/%3E%3CAddress2%3E1801%20F%20street%20NW%3C/Address2%3E%3CCity%3Ewashington%3C/City%3E%3CState%3EDC%3C/State%3E%3CZip5%3E20006%3C/Zip5%3E%3CZip4/%3E%3C/Address%3E%3C/AddressValidateRequest%3E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Backside-Transport:
+      - OK OK
+      Cache-Control:
+      - private
+      Content-Type:
+      - text/xml
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 2.0.50727
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 17 Dec 2014 21:22:07 GMT
+      X-Client-Ip:
+      - 56.0.70.6
+      Access-Control-Allow-Origin:
+      - "*"
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '407'
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <AddressValidateResponse><Address ID="0"><Address2>1801 F ST NW</Address2><City>WASHINGTON</City><State>DC</State><Zip5>20006</Zip5><Zip4>4406</Zip4><ReturnText>Default address: The address you entered was found but more information is needed (such as an apartment, suite, or box number) to match to a specific address.</ReturnText></Address></AddressValidateResponse>
+    http_version: 
+  recorded_at: Wed, 17 Dec 2014 21:22:07 GMT
+recorded_with: VCR 2.9.3

@@ -1,5 +1,7 @@
 # usps-proxy
 
+[![Build Status](https://travis-ci.org/18F/usps-proxy.svg)](https://travis-ci.org/18F/usps-proxy) [![Code Climate](https://codeclimate.com/github/18F/usps-proxy/badges/gpa.svg)](https://codeclimate.com/github/18F/usps-proxy)
+
 A Sinatra server that makes the USPS API a tad easier to consume on the client-side.
 
 This gem sits alongside the namespace created by the [`USPS` gem](https://github.com/gaffneyc/usps).
@@ -146,6 +148,12 @@ Example response:
         }
     ]
 }
+```
+
+### Testing
+
+```
+$ rspec
 ```
 
 ## Public domain
