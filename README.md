@@ -1,6 +1,6 @@
 # usps-proxy
 
-[![Build Status](https://travis-ci.org/18F/usps-proxy.svg)](https://travis-ci.org/18F/usps-proxy) [![Code Climate](https://codeclimate.com/github/18F/usps-proxy/badges/gpa.svg)](https://codeclimate.com/github/18F/usps-proxy)
+[![Build Status](https://travis-ci.org/18F/usps-proxy.svg)](https://travis-ci.org/18F/usps-proxy) [![Code Climate](https://codeclimate.com/github/18F/usps-proxy/badges/gpa.svg)](https://codeclimate.com/github/18F/usps-proxy) [![Gem Version](https://badge.fury.io/rb/usps-proxy.svg)](http://badge.fury.io/rb/usps-proxy)
 
 A Sinatra server that makes the USPS API a tad easier to consume on the client-side.
 
@@ -26,7 +26,7 @@ This is still a work-in-progress, but there is basic support for:
 In `Gemfile`:
 
 ```ruby
-gem 'usps-proxy', github: '18F/usps-proxy', branch: 'master'
+gem 'usps-proxy' # see README badge for latest version
 ```
 
 By default, `USPS::Proxy` will look for the `USPS_USER` environment variable. However, you can override this in `config/initializers/[production|development|test].rb`:
