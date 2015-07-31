@@ -1,8 +1,18 @@
 language: ruby
-rvm:
-- 2.1.5
+cache: bundler
+
+matrix:
+  include:
+    rvm:
+      - 2.1.5
+      - 2.2.2
+      - ruby-head
+  fast_finish: true
+  allow_failures:
+    rvm: ruby-head
+  env:
+    global:
+      secure: qGPK9jYZSyPblOwW77wlMdHV6f2ZKN/BhlqMVCmsORVRtQFbmHu1DLeGcDas7kkLGAbqt9UnODzX4qKDM9CbNPlFuzb91GscomOLjB71ofO+VxPDbfay2ZihKDrhEVY9AOR9ngUhz3caD7/QU8TJlid2FDI3LsU9qiS86GIbOqU=
+
 script:
-- bundle exec rspec
-env:
-  global:
-    secure: qGPK9jYZSyPblOwW77wlMdHV6f2ZKN/BhlqMVCmsORVRtQFbmHu1DLeGcDas7kkLGAbqt9UnODzX4qKDM9CbNPlFuzb91GscomOLjB71ofO+VxPDbfay2ZihKDrhEVY9AOR9ngUhz3caD7/QU8TJlid2FDI3LsU9qiS86GIbOqU=
+  - bundle exec rspec
