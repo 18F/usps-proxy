@@ -8,7 +8,6 @@ require 'sinatra/base'
 
 require 'usps'
 require 'dotenv'
-require 'pry'
 require 'json'
 Dotenv.load
 
