@@ -1,6 +1,5 @@
 require 'bundler/setup'
 require 'sinatra/base'
-require 'pry'
 
 module USPS
   module Proxy
