@@ -5,11 +5,11 @@ module USPS
   module Proxy
     class AddressStandardization < Sinatra::Base
       get '/' do
-        content_type :json     
+        content_type :json
 
         address = USPS::Address.new(params)
         request = USPS::Request::AddressStandardization.new(address)
-        
+
         begin
           response = request.send!
           {
