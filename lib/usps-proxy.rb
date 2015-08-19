@@ -7,11 +7,9 @@ require 'bundler/setup'
 require 'sinatra/base'
 
 require 'usps'
-require 'dotenv'
 require 'json'
-Dotenv.load
 
 module USPS
-  module Proxy 
+  module Proxy
   end
 end

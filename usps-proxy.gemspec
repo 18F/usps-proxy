@@ -4,30 +4,28 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'usps-proxy/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "usps-proxy"
+  spec.name          = 'usps-proxy'
   spec.version       = UspsProxy::VERSION
-  spec.authors       = ["Alan deLevie"]
-  spec.email         = ["alan.delevie@gsa.gov"]
-  spec.summary       = %q{Some space between the USPS API and your users}
-  spec.description   = %q{Makes the USPS API a bit easier to consume on the client-side.}
-  spec.homepage      = ""
-  spec.license       = "Public Domain. See LICENSE.md"
+  spec.authors       = ['Alan deLevie']
+  spec.email         = ['alan.delevie@gsa.gov']
+  spec.summary       = 'Some space between the USPS API and your users'
+  spec.description   = 'Makes the USPS API a bit easier to consume on the client-side.'
+  spec.homepage      = ''
+  spec.license       = 'Public Domain. See LICENSE.md'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
 
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "pry"
-  spec.add_development_dependency "rack-test"
-  spec.add_development_dependency "rspec"
-  spec.add_development_dependency "webmock"
-  spec.add_development_dependency "vcr"
-  spec.add_development_dependency "thin"
-  
-  spec.add_dependency "dotenv"
-  spec.add_dependency "sinatra"
-  spec.add_dependency "usps", "~>0.1"
-  
+  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'rack-test'
+  spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'webmock'
+  spec.add_development_dependency 'vcr'
+  spec.add_development_dependency 'thin'
+
+  spec.add_dependency 'sinatra'
+  spec.add_dependency 'usps', '~>0.1'
 end
