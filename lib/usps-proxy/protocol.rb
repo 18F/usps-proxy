@@ -1,14 +1,13 @@
 module USPS
   module Proxy
     module Protocol
-      
       CITY_STATE_PARAMS = [
         {
           name: :zip5,
           required: true
         }
       ]
-  
+
       ADDRESS_STANDARDIZATION_PARAMS = [
         {
           name: :firm,
@@ -39,7 +38,6 @@ module USPS
           required: false
         }
       ]
-
     end
   end
 end

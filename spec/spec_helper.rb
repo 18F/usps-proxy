@@ -1,8 +1,9 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'rack/test'
-require 'pry'
 require 'vcr'
+
+fail('ENV["USPS_USER"] IS NOT SET!!') if ENV['USPS_USER'].empty?
 
 VCR.configure do |c|
   c.cassette_library_dir = 'fixtures/vcr_cassettes'
@@ -13,14 +14,14 @@ end
 require 'usps-proxy'
 
 USPS.testing = true
- 
+
 def app
   Rack::URLMap.new(
     '/city_state' => USPS::Proxy::CityState,
     '/address_standardization' => USPS::Proxy::AddressStandardization
   )
 end
- 
+
 RSpec.configure do |config|
   config.tty = true
   config.formatter = :documentation
