@@ -44,7 +44,7 @@ In `config/routes.rb`:
 ```ruby
 scope '/usps' do
   mount USPS::Proxy::CityState, at: '/city_state'
-  mount USPS::Proxy::AddressStandardization, at: '/address_standardixation'
+  mount USPS::Proxy::AddressStandardization, at: '/address_standardization'
 end
 ```
 
